@@ -64,9 +64,15 @@ public class List<T> {
         return false;
     }
 
-    ;
-    
-     
+    public void remove(T element) {
+        int pos = this.find(element);
+
+        if (pos > -1) {
+            this.remove(pos);
+
+        }
+    }
+
     public T find(int position) {
         if (!(position >= 0 && position < size)) {
             throw new IllegalArgumentException("Invalid position");
@@ -94,6 +100,30 @@ public class List<T> {
         }
 
         return false;
+    }
+
+    public int lastIndex(T element) {
+
+        int lastPosition = -1;
+
+        for (int i = this.size - 1; i >= 0; i--) {
+            if (this.elements[i].equals(element)) {
+                return i;
+            }
+
+        }
+        return lastPosition;
+    }
+
+    public T get(int position) {
+
+        return this.find(position);
+    }
+
+    public void clear() {
+
+        this.elements = (T[]) new Object[this.elements.length];
+        this.size = 0;
     }
 
     public int size() {

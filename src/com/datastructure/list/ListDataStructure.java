@@ -19,14 +19,14 @@ public class ListDataStructure {
             vector.add("Lana");
             vector.add("Luciene");
             vector.add("Luciene");
-            vector.remove(1);
+            vector.remove("Luciene");
 
         } catch (Exception ex) {
             Logger.getLogger(ListDataStructure.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.out.println("Vector Size " + vector.size());
         System.out.println("Vector content " + vector.toString());
-        System.out.println("Vector content " + vector.find("Katharine"));
+        System.out.println("Vector content " + vector.get(1));
 
         System.out.println("arraydatastructure.ArrayDataStructure.main()");
     }
