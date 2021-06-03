@@ -1,8 +1,8 @@
 package com.datastructure.list;
 
 import com.datastructure.list.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import com.datastructure.models.Contact;
+
 
 /**
  *
@@ -10,25 +10,23 @@ import java.util.logging.Logger;
  */
 public class ListDataStructure {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
-        List<String> vector = new List<String>(2);
+        List<Contact> contacts = new List<Contact>(20);
 
-        try {
-            vector.add("Deyse");
-            vector.add("Lana");
-            vector.add("Luciene");
-            vector.add("Luciene");
-            vector.remove(1);
+        for (int i = 0; i < 30; i++) {
+            contacts.add(new Contact("Contact" + i, "contact" + i + "@email.com", "(81) 998314527" + i));
 
-        } catch (Exception ex) {
-            Logger.getLogger(ListDataStructure.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("Vector Size " + vector.size());
-        System.out.println("Vector content " + vector.toString());
-        System.out.println("Vector content " + vector.find("Katharine"));
+        
+        contacts.add(0, new Contact("Deyse", "deyse@salvus.me", "(81) 983145270"));
+        
+        contacts.remove(1);
+        
+        contacts.remove(new Contact("Contact29", "contact29@email.com", "(81) 99831452729"));
+        
+        System.out.println("Contacts: "+ contacts);
 
-        System.out.println("arraydatastructure.ArrayDataStructure.main()");
     }
 
 }
