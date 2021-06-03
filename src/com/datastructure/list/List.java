@@ -67,14 +67,14 @@ public class List<T> {
     ;
     
      
-    public T search(int position) {
+    public T find(int position) {
         if (!(position >= 0 && position < size)) {
             throw new IllegalArgumentException("Invalid position");
         }
         return this.elements[position];
     }
 
-    public int search(T element) {
+    public int find(T element) {
         for (int i = 0; i < this.size; i++) {
 
             if (this.elements[i].equals(element)) {
@@ -83,6 +83,17 @@ public class List<T> {
         }
 
         return -1;
+    }
+
+    public boolean contains(T element) {
+
+        int pos = find(element);
+
+        if (pos > -1) {
+            return true;
+        }
+
+        return false;
     }
 
     public int size() {

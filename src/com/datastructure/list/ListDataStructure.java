@@ -26,7 +26,7 @@ public class ListDataStructure {
         }
         System.out.println("Vector Size " + vector.size());
         System.out.println("Vector content " + vector.toString());
-        System.out.println("Vector content " + vector.search("Katharine"));
+        System.out.println("Vector content " + vector.find("Katharine"));
 
         System.out.println("arraydatastructure.ArrayDataStructure.main()");
     }
