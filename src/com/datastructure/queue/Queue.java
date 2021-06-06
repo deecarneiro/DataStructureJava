@@ -33,11 +33,13 @@ public class Queue<T> extends  StaticStructure<T>{
     }
                     
     protected T dequeue(){
-        T element = this.elements[0];
-        for(int i = 0; i < this.size; i++){
-            this.elements[i] = this.elements[i+1];
+        
+        if(this.isEmpty()){
+            return null;
         }
-        this.size--;
+        
+        T element = this.elements[0];
+        this.remove(0);
         return element;
     }   
 }
