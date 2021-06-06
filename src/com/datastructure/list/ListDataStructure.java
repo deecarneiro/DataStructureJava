@@ -1,7 +1,7 @@
 package com.datastructure.list;
 
 import com.datastructure.list.List;
-import com.datastructure.models.Contact;
+import com.datastructure.model.Contact;
 
 
 /**
@@ -23,7 +23,9 @@ public class ListDataStructure {
         
         contacts.remove(1);
         
-        contacts.remove(new Contact("Contact29", "contact29@email.com", "(81) 99831452729"));
+        Contact c1 = new Contact("Contact29", "contact29@email.com", "(81) 99831452729");
+        
+        contacts.remove(c1);
         
         System.out.println("Contacts: "+ contacts);
 
