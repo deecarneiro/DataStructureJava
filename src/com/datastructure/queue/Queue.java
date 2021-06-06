@@ -25,7 +25,12 @@ public class Queue<T> extends  StaticStructure<T>{
         super.add(element);
     }
     
-    protected void spy(){}
+    protected T peek(){
+        if(this.isEmpty()){
+            return null;
+        }
+        return this.elements[0];
+    }
                     
     protected T dequeue(){
         T element = this.elements[0];

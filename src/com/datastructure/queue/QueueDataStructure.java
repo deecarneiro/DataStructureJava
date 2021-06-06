@@ -22,5 +22,6 @@ public class QueueDataStructure {
         int dequeued = queue.dequeue();
         
         System.out.println("Dequeued element is: "+dequeued);
+        System.out.println("And the fist element is: "+ queue.peek());
     }
 }

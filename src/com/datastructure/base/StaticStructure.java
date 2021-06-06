@@ -69,6 +69,10 @@ public class StaticStructure<T> {
         return this.size;
     }
 
+    public boolean isEmpty() {
+        return this.size == 0;
+    }
+
     protected void increaseCapacity() {
         if (this.size == this.elements.length) {
             T[] elementsNew = (T[]) new Object[this.elements.length * 2];
