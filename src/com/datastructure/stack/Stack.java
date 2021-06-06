@@ -27,15 +27,23 @@ public class Stack<T> extends StaticStructure<T> {
     protected boolean isEmpty() {
         return this.size == 0;
     }
-    
-    protected T peek(){
-    
-        if(this.isEmpty()){
+
+    protected T peek() {
+
+        if (this.isEmpty()) {
             return null;
         }
-        
-        return this.elements[this.size -1];
-    
+
+        return this.elements[this.size - 1];
+
+    }
+
+    protected T pop() {
+        if (this.isEmpty()) {
+            return null;
+        }
+
+        return  this.elements[--this.size];
     }
 
 }
