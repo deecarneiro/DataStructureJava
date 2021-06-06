@@ -65,7 +65,7 @@ public class StaticStructure<T> {
         return false;
     }
 
-    protected int size() {
+    public int size() {
         return this.size;
     }
 
