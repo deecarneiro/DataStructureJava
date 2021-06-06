@@ -25,7 +25,7 @@ public class Stack<T> extends StaticStructure<T> {
     }
 
     public boolean isEmpty() {
-        return this.size == 0;
+      return super.isEmpty();
     }
 
     protected T peek() {
