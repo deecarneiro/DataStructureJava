@@ -1,5 +1,5 @@
 
-package com.datastructure.models;
+package com.datastructure.model;
 
 /**
  *

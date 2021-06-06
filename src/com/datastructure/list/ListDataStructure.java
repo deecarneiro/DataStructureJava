@@ -1,7 +1,7 @@
 package com.datastructure.list;
 
 import com.datastructure.list.List;
-import com.datastructure.models.Contact;
+import com.datastructure.model.Contact;
 
 
 /**

@@ -16,15 +16,15 @@ public class Stack<T> extends StaticStructure<T> {
         super(capacity, classType);
     }
 
-    Stack() {
+    public Stack() {
         super();
     }
 
-    protected boolean push(T element) throws Exception {
+    public boolean push(T element) throws Exception {
         return super.add(element);
     }
 
-    protected boolean isEmpty() {
+    public boolean isEmpty() {
         return this.size == 0;
     }
 
@@ -38,7 +38,7 @@ public class Stack<T> extends StaticStructure<T> {
 
     }
 
-    protected T pop() {
+    public T pop() {
         if (this.isEmpty()) {
             return null;
         }
