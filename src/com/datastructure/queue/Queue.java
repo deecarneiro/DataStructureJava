@@ -21,18 +21,18 @@ public class Queue<T> extends  StaticStructure<T>{
         super(capacity, classType);
     }
     
-    protected void enqueue(T element) throws Exception{
+    public void enqueue(T element) throws Exception{
         super.add(element);
     }
     
-    protected T peek(){
+    public T peek(){
         if(this.isEmpty()){
             return null;
         }
         return this.elements[0];
     }
                     
-    protected T dequeue(){
+    public T dequeue(){
         
         if(this.isEmpty()){
             return null;
