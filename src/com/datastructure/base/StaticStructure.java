@@ -36,19 +36,20 @@ public class StaticStructure<T> {
     }
 
     protected boolean add(int position, T element) throws Exception {
-        if (!(position >= 0 && position < size)) {
+        if (position < 0 || position > size) {
             throw new IllegalArgumentException("Invalid position");
         }
 
         this.increaseCapacity();
 
+        //mover todos os elementos
         for (int i = this.size - 1; i >= position; i--) {
             this.elements[i + 1] = this.elements[i];
         }
         this.elements[position] = element;
         this.size++;
 
-        return false;
+        return true;
 
     }
 
