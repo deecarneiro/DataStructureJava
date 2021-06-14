@@ -18,7 +18,8 @@ public class PriorityQueue<T> extends Queue<T> {
         super(capacity, classType);
     }
 
-    protected void enqueue(T element) throws Exception {
+    @Override
+    public void enqueue(T element) throws Exception {
 
         Comparable<T> key = (Comparable<T>) element;
 
