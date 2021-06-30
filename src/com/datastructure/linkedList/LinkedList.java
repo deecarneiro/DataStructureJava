@@ -16,15 +16,34 @@ public class LinkedList<T> extends StaticStructure<T> {
 
     }
 
-    @Override
-    protected boolean add(int position, Object element) throws Exception {
-        this.increaseCapacity();
-        Node newNode = new Node(element);
-        for (int i = position; i > 0; i--) {
-           
-        }   
-        
-        return false;
+    public static Node
+            deleteAtPosition(int index) {
+        Node currNode = head, prev = null;
+
+        if (index == 0 && currNode != null) {
+            System.out.println("PRIMEIRO CONDICIONAL");
+            head = currNode.next;
+            return head;
+        }
+
+        int counter = 0;
+
+        while (currNode != null) {
+
+            if (counter == index) {
+                prev.next = currNode.next;
+                break;
+            } else {
+                prev = currNode;
+                currNode = currNode.next;
+                counter++;
+            }
+        }
+
+        if (currNode == null) {
+            throw new IllegalArgumentException("Cannot delete at invalid position");
+        }
+        return head;
     }
 
     @Override
@@ -63,8 +82,8 @@ public class LinkedList<T> extends StaticStructure<T> {
         Node currentNode = head;
         tostring.append("[");
         while (currentNode != null) {
-            tostring.append(currentNode.data);
-            tostring.append(", ");
+            String comma = (currentNode.next != null) ? ", " : "";
+            tostring.append(currentNode.data +comma );
             currentNode = currentNode.next;
         }
         tostring.append("]");
@@ -79,7 +98,7 @@ public class LinkedList<T> extends StaticStructure<T> {
         contacts.add(1);
         contacts.add(3);
         contacts.add(2);
-
-        System.out.print(contacts.size);
+        contacts.deleteAtPosition(2);
+        System.out.print(contacts);
     }
 }
