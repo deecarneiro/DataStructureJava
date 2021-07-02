@@ -16,12 +16,10 @@ public class LinkedList<T> extends StaticStructure<T> {
 
     }
 
-    public static Node
-            deleteAtPosition(int index) {
+    protected Node deleteAtPosition(int index) {
         Node currNode = head, prev = null;
 
         if (index == 0 && currNode != null) {
-            System.out.println("PRIMEIRO CONDICIONAL");
             head = currNode.next;
             return head;
         }
@@ -42,6 +40,35 @@ public class LinkedList<T> extends StaticStructure<T> {
 
         if (currNode == null) {
             throw new IllegalArgumentException("Cannot delete at invalid position");
+        }
+        return head;
+    }
+
+    public Node insertAtPosition(T element, int index) {
+
+        Node newNode = new Node(element);
+        
+        if (index < 0) {
+            throw new IllegalArgumentException("Cannot insert at invalid positon");
+        } 
+        
+        if (index == 0) {
+            newNode.next = head;
+            head = newNode;
+        } else {
+            Node prev = head;
+            for (int i = 1; i < index; i++) {
+                if (prev != null) {
+                    prev = prev.next;
+                }
+            }
+
+            if (prev != null) {
+                newNode.next = prev.next;
+                prev.next = newNode;
+            } else {
+                System.out.print("\nThe previous node is null.");
+            }
         }
         return head;
     }
@@ -83,7 +110,7 @@ public class LinkedList<T> extends StaticStructure<T> {
         tostring.append("[");
         while (currentNode != null) {
             String comma = (currentNode.next != null) ? ", " : "";
-            tostring.append(currentNode.data +comma );
+            tostring.append(currentNode.data + comma);
             currentNode = currentNode.next;
         }
         tostring.append("]");
@@ -99,6 +126,9 @@ public class LinkedList<T> extends StaticStructure<T> {
         contacts.add(3);
         contacts.add(2);
         contacts.deleteAtPosition(2);
-        System.out.print(contacts);
+        System.out.println(contacts);
+        contacts.insertAtPosition(8, 2);
+        System.out.println(contacts);
+
     }
 }
