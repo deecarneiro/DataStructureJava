@@ -85,6 +85,6 @@ public class StaticStructure<T> {
 
 ### 1. Requiriments
 
-- Eclipse(or any Java IDE/Code Editor)
-- JDK 
+- [Eclipse](https://www.eclipse.org/downloads/)(or any Java IDE/Code Editor)
+- [JDK](https://www.oracle.com/br/java/technologies/javase/) 
 
